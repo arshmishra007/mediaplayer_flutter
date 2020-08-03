@@ -3,24 +3,27 @@ import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
 
-var audio = AudioCache();
+var audioPlayer = AudioPlayer();
+int result;
+
 
 AudioPlayer()
 { 
  
  
- play()
- {
-  
-  audio.play('song.mp3');
- }
+   play() async {
+    result = await audioPlayer.play('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+    if (result == 1) {
+      // success
+     }
+   }
  pause()
  {
-   audio.pause();
+    result = await audioPlayer.pause();
  }
  refresh()
  {
-   audio.stop();
+   result = await audioPlayer.stop();
  }
    
 
