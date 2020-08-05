@@ -17,11 +17,11 @@ AudioPlayer()
       // success
      }
    }
- pause()
+ pause() async
  {
     result = await audioPlayer.pause();
  }
- refresh()
+ refresh() async
  {
    result = await audioPlayer.stop();
  }
